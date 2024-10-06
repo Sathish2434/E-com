@@ -109,7 +109,7 @@ body {
 
 #navbar li a:hover, 
 #navbar li a.active {
-    color: #bf02f3aa;
+    color: #cb0eff;
 }
 
 #navbar li a.active::after,
@@ -117,7 +117,7 @@ body {
     content: "";
     width: 30%;
     height: 2px;
-    background: #bf02f3aa;
+    background: #f305ffaa;
     position: absolute;
     bottom: -4px;
     left: 20px;
