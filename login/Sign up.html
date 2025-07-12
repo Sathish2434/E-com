@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login UI</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: radial-gradient(circle, #2b01ff, #130f30);
+        padding: 20px;
+      }
+
+      .login-container {
+        background: rgba(255, 0, 0, 0.307);
+        padding: 30px;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 10px rgb(94, 4, 4);
+        text-align: center;
+        width: 90%;
+        max-width: 350px;
+        color: white;
+      }
+
+      .profile-icon {
+        width: 80px;
+        height: 80px;
+        background: rgb(255, 255, 255);
+        border-radius: 50%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgb(0, 0, 255);
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        text-align: left;
+        padding-left: 15px;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        font-weight: 700;
+      }
+
+      input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+        text-align: left;
+      }
+
+      .link-container {
+        margin: 10px 0;
+        text-align: left;
+      }
+
+      .divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0;
+      }
+
+      .divider::before,
+      .divider::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: white;
+        margin: 0 10px;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 20px;
+        background: white;
+        color: black;
+        cursor: pointer;
+        margin: 5px 0;
+        font-weight: bold;
+      }
+
+      .btn:hover {
+        background: #ddd;
+      }
+
+      @media (max-width: 480px) {
+        .login-container {
+          padding: 20px;
+        }
+
+        .profile-icon {
+          width: 60px;
+          height: 60px;
+        }
+      }
+      @media (min-width: 2490px) {
+        .login-container {
+          padding: 50px;
+        }
+
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          background: radial-gradient(circle, #1a1a2e, #16213e);
+          padding: 20px;
+        }
+
+        .profile-icon {
+          width: 60px;
+          height: 60px;
+        }
+      }
+      .profile-icon img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      a {
+        font-weight: 700;
+      }
+      small{
+        font-weight: 700;
+      }
+
+      img{
+        animation: flip-with-scale 1s;
+      }
+     @keyframes flip-with-scale {
+    0% {
+        transform: perspective(400px) scaleX(1);
+    }
+
+    100% {
+        transform: perspective(400px) scaleX(-1);
+    }
+}
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="profile-icon"><img src="loginlogo.jpg" alt="" /></div>
+      <input type="email" placeholder="E-Mail Or Phone Number" required />
+      <input type="password" placeholder="Enter Password" required />
+      <input type="password" placeholder="Conform Password" required />
+      <button class="btn">
+        <a href="#" style="text-decoration: none; color: black"
+          >Create Accont</a
+        >
+      </button>
+
+      <div class="link-container">
+        <small
+          >Already have a account
+          <a href="Login UI.html" style="color: white;">Log In</a></small
+        ><br />
+      </div>
+      <div class="divider">OR</div>
+      <button class="btn">Google</button>
+      <button class="btn">Microsoft</button>
+    </div>
+  </body>
+</html>

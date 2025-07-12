@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .cart-container { max-width: 800px; margin: 40px auto; background: #fff; padding: 24px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .cart-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        .cart-table th, .cart-table td { padding: 12px; border-bottom: 1px solid #eee; text-align: left; }
+        .cart-table img { width: 60px; height: 60px; object-fit: cover; border-radius: 6px; }
+        .cart-total { font-size: 1.2em; font-weight: bold; text-align: right; margin-top: 20px; }
+        .empty-cart { text-align: center; color: #888; margin: 40px 0; }
+        .clear-btn { background: #e74c3c; color: #fff; border: none; padding: 10px 18px; margin-left: 10px; border-radius: 4px; cursor: pointer; float: right; }
+    </style>
+</head>
+<body>
+    <div class="cart-container">
+        <h2>Your Cart</h2>
+        <table class="cart-table" id="cartTable">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody id="cartBody">
+                <!-- Cart items will be inserted here -->
+            </tbody>
+        </table>
+        <div class="cart-total" id="cartTotal"></div>
+        <button class="clear-btn" onclick="PlaceOrder()">Place Order</button>
+        <button class="clear-btn" onclick="clearCart()">Clear Cart</button>
+        <div class="empty-cart" id="emptyCart" style="display:none;">Your cart is empty.</div>
+        <div id="orderSummary" style="display:none; margin-top:40px;"></div>
+    </div>
+    <script>
+        function renderCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartBody = document.getElementById('cartBody');
+            const cartTotal = document.getElementById('cartTotal');
+            const emptyCart = document.getElementById('emptyCart');
+            cartBody.innerHTML = '';
+            let total = 0;
+            if (cart.length === 0) {
+                document.getElementById('cartTable').style.display = 'none';
+                cartTotal.style.display = 'none';
+                emptyCart.style.display = 'block';
+                document.getElementById('orderSummary').style.display = 'none';
+                return;
+            } else {
+                document.getElementById('cartTable').style.display = '';
+                cartTotal.style.display = '';
+                emptyCart.style.display = 'none';
+                document.getElementById('orderSummary').style.display = 'none';
+            }
+            cart.forEach(item => {
+                total += item.price;
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td><img src="${item.image}" alt="${item.name}"></td>
+                    <td>${item.name}</td>
+                    <td>₹${item.price}</td>
+                `;
+                cartBody.appendChild(row);
+            });
+            cartTotal.textContent = 'Total: ₹' + total;
+        }
+        function clearCart() {
+            localStorage.removeItem('cart');
+            renderCart();
+        }
+        document.addEventListener('DOMContentLoaded', renderCart);
+
+        function PlaceOrder(){
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if(cart.length === 0) return;
+            localStorage.setItem('orderInProgress', 'true');
+            window.location.href = 'paymentSection.html';
+        }
+    </script>
+</body>
+</html> 

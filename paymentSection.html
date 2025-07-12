@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Section</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .payment-container { max-width: 800px; margin: 40px auto; background: #fff; padding: 24px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .order-summary { margin-bottom: 32px; }
+        .order-summary table { width: 100%; border-collapse: collapse; }
+        .order-summary th, .order-summary td { padding: 10px; border-bottom: 1px solid #eee; text-align: left; }
+        .order-summary img { width: 50px; height: 50px; object-fit: cover; border-radius: 6px; }
+        .total-row { font-weight: bold; }
+        .payment-form { margin-top: 24px; }
+        .payment-form label { display: block; margin-bottom: 6px; font-weight: 500; }
+        .payment-form input, .payment-form select { width: 100%; padding: 8px; margin-bottom: 16px; border: 1px solid #ccc; border-radius: 4px; }
+        .pay-btn { background: #2ecc40; color: #fff; border: none; padding: 12px 24px; border-radius: 4px; cursor: pointer; font-size: 1em; }
+        .pay-btn:disabled { background: #aaa; }
+        .confirmation { color: #27ae60; font-size: 1.2em; margin-top: 32px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Payment Section</h2>
+        <div class="order-summary" id="orderSummary"></div>
+        <form class="payment-form" id="paymentForm">
+            <label for="paymentMethod">Payment Method</label>
+            <select id="paymentMethod" required>
+                <option value="">Select</option>
+                <option value="card">Credit/Debit Card</option>
+                <option value="upi">UPI</option>
+            </select>
+            <div id="cardFields" style="display:none;">
+                <label for="cardNumber">Card Number</label>
+                <input type="text" id="cardNumber" maxlength="16" pattern="\d{16}" placeholder="1234 5678 9012 3456">
+                <label for="cardName">Name on Card</label>
+                <input type="text" id="cardName" placeholder="Cardholder Name">
+                <label for="cardExpiry">Expiry</label>
+                <input type="text" id="cardExpiry" maxlength="5" placeholder="MM/YY">
+                <label for="cardCVV">CVV</label>
+                <input type="password" id="cardCVV" maxlength="3" pattern="\d{3}" placeholder="123">
+            </div>
+            <div id="upiFields" style="display:none;">
+                <label for="upiId">UPI ID</label>
+                <input type="text" id="upiId" placeholder="example@upi">
+            </div>
+            <button type="submit" class="pay-btn">Pay Now</button>
+        </form>
+        <div class="confirmation" id="confirmation" style="display:none;"></div>
+    </div>
+    <script>
+        // Show order summary
+        function renderOrderSummary() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let total = 0;
+            if(cart.length === 0) {
+                document.getElementById('orderSummary').innerHTML = '<div style="color:#e74c3c;">No items in cart. <a href="cart.html">Go to Cart</a></div>';
+                document.getElementById('paymentForm').style.display = 'none';
+                return;
+            }
+            let html = '<h3>Order Summary</h3><table><thead><tr><th>Image</th><th>Name</th><th>Price</th></tr></thead><tbody>';
+            cart.forEach(item => {
+                total += item.price;
+                html += `<tr><td><img src="${item.image}" alt="${item.name}"></td><td>${item.name}</td><td>₹${item.price}</td></tr>`;
+            });
+            html += `</tbody><tfoot><tr class='total-row'><td colspan='2'>Total</td><td>₹${total}</td></tr></tfoot></table>`;
+            document.getElementById('orderSummary').innerHTML = html;
+        }
+        // Payment method toggle
+        document.getElementById('paymentMethod').addEventListener('change', function() {
+            document.getElementById('cardFields').style.display = this.value === 'card' ? '' : 'none';
+            document.getElementById('upiFields').style.display = this.value === 'upi' ? '' : 'none';
+        });
+        // Payment form submit
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const method = document.getElementById('paymentMethod').value;
+            let valid = true;
+            if(method === 'card') {
+                if(!document.getElementById('cardNumber').value.match(/^\d{16}$/)) valid = false;
+                if(!document.getElementById('cardName').value.trim()) valid = false;
+                if(!document.getElementById('cardExpiry').value.match(/^\d{2}\/\d{2}$/)) valid = false;
+                if(!document.getElementById('cardCVV').value.match(/^\d{3}$/)) valid = false;
+            } else if(method === 'upi') {
+                if(!document.getElementById('upiId').value.match(/^\w+@\w+$/)) valid = false;
+            } else {
+                valid = false;
+            }
+            if(!valid) {
+                alert('Please fill all payment details correctly.');
+                return;
+            }
+            // Simulate payment success
+            localStorage.removeItem('cart');
+            localStorage.removeItem('orderInProgress');
+            document.getElementById('paymentForm').style.display = 'none';
+            document.getElementById('confirmation').style.display = 'block';
+            document.getElementById('confirmation').innerHTML = 'Payment successful! <br> Thank you for your order.';
+        });
+        document.addEventListener('DOMContentLoaded', renderOrderSummary);
+    </script>
+</body>
+</html>
