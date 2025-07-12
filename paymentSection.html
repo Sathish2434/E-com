@@ -91,12 +91,43 @@
                 alert('Please fill all payment details correctly.');
                 return;
             }
-            // Simulate payment success
+            // Simulate payment success and save order to history
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const orderTotal = cart.reduce((sum, item) => sum + item.price, 0);
+            const orderItems = cart.map(item => item.name);
+            
+            // Create order object
+            const order = {
+                id: 'ORD' + Date.now(),
+                date: new Date().toLocaleDateString(),
+                total: orderTotal,
+                items: orderItems,
+                status: 'Processing',
+                paymentMethod: method,
+                orderDetails: cart
+            };
+            
+            // Save order to user's order history
+            const userOrders = JSON.parse(localStorage.getItem('userOrders')) || [];
+            userOrders.push(order);
+            localStorage.setItem('userOrders', JSON.stringify(userOrders));
+            
+            // Clear cart and order progress
             localStorage.removeItem('cart');
             localStorage.removeItem('orderInProgress');
+            
             document.getElementById('paymentForm').style.display = 'none';
             document.getElementById('confirmation').style.display = 'block';
-            document.getElementById('confirmation').innerHTML = 'Payment successful! <br> Thank you for your order.';
+            document.getElementById('confirmation').innerHTML = `
+                <h3>🎉 Payment Successful!</h3>
+                <p>Thank you for your order!</p>
+                <p><strong>Order ID:</strong> ${order.id}</p>
+                <p><strong>Total:</strong> ₹${orderTotal}</p>
+                <p>Your order has been placed and is being processed.</p>
+                <button onclick="window.location.href='index.html'" style="background: #667eea; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 10px;">
+                    Continue Shopping
+                </button>
+            `;
         });
         document.addEventListener('DOMContentLoaded', renderOrderSummary);
     </script>

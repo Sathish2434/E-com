@@ -9,6 +9,35 @@ window.addToCart = function(name, price, image) {
     alert('Product added to cart!');
 };
 
+// Login functionality
+function checkLoginStatus() {
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    const loginButton = document.getElementById('login');
+    
+    if (isLoggedIn) {
+        // User is logged in - show loginlogo.jpg
+        loginButton.style.backgroundImage = 'url("login/loginlogo.jpg")';
+        loginButton.onclick = function() {
+            // Redirect to user profile page
+            window.location.href = 'user-profile.html';
+        };
+    } else {
+        // User is not logged in - show default image.png
+        loginButton.style.backgroundImage = 'url("login/image.png")';
+        loginButton.onclick = function() {
+            window.location.href = 'login/Login UI.html';
+        };
+    }
+}
+
+// Function to handle successful login
+window.handleLoginSuccess = function(userName) {
+    localStorage.setItem('isLoggedIn', 'true');
+    localStorage.setItem('userName', userName);
+    alert('Login successful! Welcome, ' + userName);
+    window.location.href = 'index.html'; // Redirect back to home page
+};
+
 // Attach event listeners to dynamically created cart buttons
 function setupDynamicCartButtons() {
     document.querySelectorAll('.add-to-cart').forEach(btn => {
@@ -25,6 +54,9 @@ function setupDynamicCartButtons() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
+  // Check login status and update button
+  checkLoginStatus();
+  
   const productContainer = document.querySelector(".pro-container");
 
   // Fetch products from backend

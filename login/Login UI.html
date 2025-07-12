@@ -162,9 +162,9 @@
       <div class="profile-icon">
         <img src="loginlogo.jpg" alt="" />
       </div>
-      <input type="email" placeholder="Enter Your E-Mail " required />
-      <input type="password" placeholder="Enter Password" required />
-      <button class="btn">
+      <input type="email" id="email" placeholder="Enter Your E-Mail " required />
+      <input type="password" id="password" placeholder="Enter Password" required />
+      <button class="btn" onclick="handleLogin()">
         <a href="#" style="text-decoration: none; color: black">Login</a>
       </button>
 
@@ -183,5 +183,42 @@
       <button class="btn">Google</button>
       <button class="btn">Microsoft</button>
     </div>
+
+    <script>
+      function handleLogin() {
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        
+        if (email && password) {
+          // Simple validation - in a real app, you'd validate against a backend
+          if (email.includes('@') && password.length >= 3) {
+            // Extract username from email (everything before @)
+            const userName = email.split('@')[0];
+            
+            // Call the function from the main script
+            if (window.parent && window.parent.handleLoginSuccess) {
+              window.parent.handleLoginSuccess(userName);
+            } else {
+              // Fallback if parent function is not available
+              localStorage.setItem('isLoggedIn', 'true');
+              localStorage.setItem('userName', userName);
+              alert('Login successful! Welcome, ' + userName);
+              window.location.href = '../index.html';
+            }
+          } else {
+            alert('Please enter a valid email and password (minimum 3 characters)');
+          }
+        } else {
+          alert('Please fill in all fields');
+        }
+      }
+      
+      // Allow Enter key to trigger login
+      document.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          handleLogin();
+        }
+      });
+    </script>
   </body>
 </html>
