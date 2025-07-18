@@ -26,22 +26,30 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="paymentSection.html">Pay</a></li>
+                <li><a href="wishlist.html"><i class="fa fa-heart"></i> Wishlist</a></li>
                 <li><a href="cart.html" id="cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a></li>
             </ul>
         </div>
 
-        <div>
+        <div style="display: flex; align-items: center; gap: 10px;">
             <button id="login" onclick="window.location.href='login/Login UI.html'"></button>
+            <!-- Hamburger menu for mobile -->
+            <button id="hamburger-menu" aria-label="Open navigation" style="display:none; background:none; border:none; font-size:2em; cursor:pointer;">
+                <i class="fa fa-bars"></i>
+            </button>
         </div>
 
     </section>
 
     <section id="hero">
-        <h4>Trade-in-Offer</h4>
-        <h2>Super value deals</h2>
-        <h1>On all products</h1>
-        <p>Save more coupons & up to 70% off!</p>
-        <button>Shop Now</button>
+        <div class="hero-text">
+            <h4>Trade-in-Offer</h4>
+            <h2>Super value deals</h2>
+            <h1>On all products</h1>
+            <p>Save more coupons & up to 70% off!</p>
+            <button>Shop Now</button>
+        </div>
+
     </section>
 
     <section id="feature" class="section-p1">
@@ -94,6 +102,9 @@
                     </div>
                     <h4>₹11499/-</h4>
                 </div>
+                <button class="wishlist-btn" onclick="toggleWishlist('Premium Cotton T-Shirt', 11499, 'img/products/f1.jpg', this)">
+                    <i class="fa fa-heart"></i>
+                </button>
                 <button id="cart" onclick="addToCart('Premium Cotton T-Shirt', 11499, 'img/products/f1.jpg')">
                     <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                 </button>

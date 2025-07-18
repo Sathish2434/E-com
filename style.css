@@ -186,7 +186,7 @@ body {
 #feature .fe-box {
     width: 180px;
     text-align: center;
-    padding: 25px 15px;
+    padding: 5px 1px;
     box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
     border: 1px solid #cce7d0;
     border-radius: 4px;
@@ -807,6 +807,23 @@ button.white {
     position: relative;
 }
 
+.wishlist-btn {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    cursor: pointer;
+    font-size: 1.3em;
+    color: #bbb;
+    transition: color 0.2s, transform 0.2s;
+}
+.wishlist-btn.active, .wishlist-btn:hover {
+    color: #e74c3c;
+    transform: scale(1.15);
+}
+
 /* Responsive Design for iPhone 14 Pro Max and below */
 @media (max-width: 550px) {
     #hero {
@@ -905,3 +922,769 @@ button.white {
     }
 }
 }
+
+/* --- Responsive Enhancements Start --- */
+
+/* Large desktops (1200px and up) */
+@media (max-width: 1200px) {
+  .section-p1 {
+    padding: 40px 40px;
+  }
+  #header {
+    padding: 20px 40px;
+  }
+  #banner3 {
+    padding: 0 40px;
+  }
+}
+
+/* Tablets and small desktops (992px and up) */
+@media (max-width: 992px) {
+  #header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 20px;
+  }
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  #navbar li {
+    padding: 10px 0;
+  }
+  .section-p1 {
+    padding: 30px 20px;
+  }
+  #feature {
+    justify-content: center;
+    gap: 10px;
+  }
+  #product1 .pro-container {
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  #product1 .pro {
+    width: 45%;
+    min-width: 220px;
+  }
+  #banner3 {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+  #banner3 .banner-box {
+    min-width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/* Tablets and large phones (768px and up) */
+@media (max-width: 768px) {
+  #header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 10px;
+  }
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  #navbar li {
+    padding: 8px 0;
+  }
+  .section-p1 {
+    padding: 20px 10px;
+  }
+  #feature {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  #product1 .pro-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  #product1 .pro {
+    width: 90%;
+    min-width: 180px;
+  }
+  #banner3 {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+  #banner3 .banner-box {
+    min-width: 100%;
+    margin-bottom: 20px;
+  }
+  #sm-banner {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  #sm-banner .banner-box {
+    min-width: 100%;
+    height: 30vh;
+    margin-bottom: 10px;
+  }
+  #newsletter .form {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Phones (550px and up) */
+@media (max-width: 550px) {
+  #header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 5px;
+  }
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  #navbar li {
+    padding: 6px 0;
+  }
+  .section-p1 {
+    padding: 10px 5px;
+  }
+  #feature {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  #feature .fe-box {
+    width: 90%;
+    margin: 8px 0;
+  }
+  #product1 .pro-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+  }
+  #product1 .pro {
+    width: 100%;
+    min-width: 120px;
+    margin: 10px 0;
+  }
+  #banner {
+    height: 18vh;
+    padding: 10px 0;
+  }
+  #banner3 {
+    flex-direction: column;
+    padding: 0 5px;
+  }
+  #banner3 .banner-box {
+    min-width: 100%;
+    margin-bottom: 10px;
+    height: 18vh;
+    padding: 10px;
+  }
+  #sm-banner {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  #sm-banner .banner-box {
+    min-width: 100%;
+    height: 18vh;
+    margin-bottom: 8px;
+    padding: 10px;
+  }
+  #newsletter {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+  }
+  #newsletter .form {
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+  }
+  #newsletter input {
+    font-size: 12px;
+  }
+  #newsletter button {
+    font-size: 12px;
+  }
+  footer .content, footer .bottom-details .bottom_text {
+    padding: 10px 5px;
+  }
+  footer #link-boxes {
+    flex-direction: column;
+    gap: 10px;
+  }
+  footer #link-boxes .box {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Extra small devices (375px and up) */
+@media (max-width: 375px) {
+  h1 { font-size: 22px; }
+  h2 { font-size: 18px; }
+  h4 { font-size: 14px; }
+  p { font-size: 12px; }
+  #header, .section-p1, #banner3, #newsletter, footer .content, footer .bottom-details .bottom_text {
+    padding: 4px 2px;
+  }
+  #product1 .pro {
+    min-width: 80px;
+    font-size: 12px;
+  }
+  #feature .fe-box {
+    padding: 10px 5px;
+  }
+}
+
+/* Hide horizontal overflow */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* --- Responsive Enhancements End --- */
+
+/* --- Hamburger and Mobile Header Styles Start --- */
+@media (max-width: 768px) {
+  #header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px;
+    position: relative;
+  }
+  #hamburger-menu {
+    display: block !important;
+    z-index: 1002;
+    margin-left: 10px;
+  }
+  #navbar {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    background: #e3e6f3;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    z-index: 1001;
+    padding: 20px 0 10px 0;
+  }
+  #navbar li {
+    width: 100%;
+    text-align: left;
+    padding: 12px 24px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  #navbar li:last-child {
+    border-bottom: none;
+  }
+  #login {
+    margin-left: auto;
+  }
+}
+
+/* Overlay effect for open menu (optional, can be toggled with a class if desired) */
+#navbar.menu-open::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+/* Hero section text readability on mobile */
+@media (max-width: 768px) {
+  #hero {
+    padding: 0 10px 0;
+    height: 50vh;
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+    justify-content: flex-end;
+  }
+  #hero h1, #hero h2, #hero h4, #hero p {
+    background: rgba(255,255,255,0.7);
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 2px;
+  }
+  #hero button {
+    margin-bottom: 20px;
+  }
+}
+/* --- Hamburger and Mobile Header Styles End --- */
+
+/* --- Responsive Header/Navbar for All Devices Start --- */
+
+/* Large desktops (1200px and up) */
+@media (min-width: 1200px) {
+  #header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+  }
+  #navbar {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    position: static;
+    width: auto;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
+  #navbar li {
+    padding: 0 20px;
+    border-bottom: none;
+    width: auto;
+    text-align: center;
+  }
+  #hamburger-menu {
+    display: none !important;
+  }
+  #login {
+    margin-left: 0;
+  }
+}
+
+/* Laptops/Tablets (992px and up) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  #header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+  }
+  #navbar {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    position: static;
+    width: auto;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
+  #navbar li {
+    padding: 0 14px;
+    border-bottom: none;
+    width: auto;
+    text-align: center;
+  }
+  #hamburger-menu {
+    display: none !important;
+  }
+  #login {
+    margin-left: 0;
+  }
+}
+
+/* Tablets and below (less than 992px) */
+@media (max-width: 991px) {
+  #header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px;
+    position: relative;
+  }
+  #header > a.logo {
+    margin-right: auto;
+  }
+  #header > div:last-child {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+  }
+  #hamburger-menu {
+    display: block !important;
+    z-index: 1002;
+    margin-left: 0;
+    margin-right: 0;
+    order: 2;
+  }
+  #login {
+    order: 1;
+  }
+}
+
+/* --- Responsive Header/Navbar for All Devices End --- */
+
+/* --- Mobile Font and Product Grid Tweaks Start --- */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; line-height: 2.2rem; }
+  h2 { font-size: 1.5rem; line-height: 1.7rem; }
+  h4 { font-size: 1rem; }
+  p { font-size: 0.95rem; }
+  .star i, .pro .des i { font-size: 0.9em; }
+  #hero {
+    padding: 0 5px 0;
+    min-height: 220px;
+    height: auto;
+  }
+  #hero h1, #hero h2, #hero h4, #hero p {
+    font-size: inherit;
+    padding: 1px 4px;
+    margin-bottom: 1px;
+    background: rgba(255,255,255,0.5);
+  }
+  #hero button {
+    font-size: 1em;
+    padding: 10px 30px 10px 25px;
+  }
+  #product1 .pro-container {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 0 2px;
+  }
+  #product1 .pro {
+    width: 48%;
+    min-width: 120px;
+    margin: 0 0 12px 0;
+    box-sizing: border-box;
+  }
+  #product1 .pro img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+@media (max-width: 550px) {
+  h1 { font-size: 1.3rem; line-height: 1.5rem; }
+  h2 { font-size: 1.1rem; line-height: 1.2rem; }
+  h4 { font-size: 0.95rem; }
+  p { font-size: 0.85rem; }
+  #product1 .pro {
+    width: 98%;
+    min-width: 90px;
+    margin: 0 0 10px 0;
+  }
+  #product1 .pro-container {
+    gap: 6px;
+  }
+}
+@media (max-width: 375px) {
+  h1 { font-size: 1.1rem; }
+  h2 { font-size: 0.95rem; }
+  h4 { font-size: 0.8rem; }
+  p { font-size: 0.7rem; }
+  #product1 .pro {
+    width: 98%;
+    min-width: 60px;
+    font-size: 0.8em;
+  }
+}
+/* --- Mobile Font and Product Grid Tweaks End --- */
+
+/* --- Hamburger Right Alignment and Section Responsiveness Start --- */
+@media (max-width: 991px) {
+  #header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px;
+    position: relative;
+  }
+  #header > a.logo {
+    margin-right: auto;
+  }
+  #header > div:last-child {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+  }
+  #hamburger-menu {
+    display: block !important;
+    z-index: 1002;
+    margin-left: 0;
+    margin-right: 0;
+    order: 2;
+  }
+  #login {
+    order: 1;
+  }
+}
+
+/* Ensure all sections have responsive padding and font */
+@media (max-width: 768px) {
+  #feature, #product1, #banner, #sm-banner, #banner3, #newsletter, footer {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+@media (max-width: 550px) {
+  #feature, #product1, #banner, #sm-banner, #banner3, #newsletter, footer {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+}
+/* --- Hamburger Right Alignment and Section Responsiveness End --- */
+
+/* --- True Responsive Grid Fixes Start --- */
+
+/* Product grid: 4 per row desktop, 3 per row tablet, 2 per row mobile */
+@media (min-width: 992px) {
+  #product1 .pro-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 0 20px;
+  }
+  #product1 .pro {
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 769px) and (max-width: 991px) {
+  #product1 .pro-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 0 10px;
+  }
+  #product1 .pro {
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 768px) {
+  #product1 .pro-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 0 2px;
+  }
+  #product1 .pro {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Feature grid: 4 per row desktop, 3 per row tablet, 2 per row mobile */
+@media (min-width: 992px) {
+  #feature {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 0 20px;
+  }
+  #feature .fe-box {
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 769px) and (max-width: 991px) {
+  #feature {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 0 10px;
+  }
+  #feature .fe-box {
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 768px) {
+  #feature {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 0 2px;
+  }
+  #feature .fe-box {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Make all images scale down and not overflow */
+#product1 .pro img, #feature .fe-box img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Hero section: compact text and image on mobile */
+@media (max-width: 768px) {
+  #hero {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    min-height: 180px;
+    height: auto;
+    padding: 10px 5px 10px 5px;
+  }
+  #hero h1, #hero h2, #hero h4, #hero p {
+    font-size: 1em;
+    padding: 2px 6px;
+    margin-bottom: 2px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 3px;
+  }
+  #hero button {
+    font-size: 0.95em;
+    padding: 8px 18px 8px 18px;
+    margin-bottom: 10px;
+  }
+}
+
+/* --- True Responsive Grid Fixes End --- */
+
+/* --- Compact Hero Section Start --- */
+#hero {
+  max-height: 400px;
+  min-height: 220px;
+  height: 60vh;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+@media (max-width: 991px) {
+  #hero {
+    max-height: 300px;
+    min-height: 160px;
+    height: 40vh;
+    padding: 0 15px;
+  }
+}
+@media (max-width: 768px) {
+  #hero {
+    max-height: 180px;
+    min-height: 100px;
+    height: 28vh;
+    padding: 0 5px;
+    justify-content: center;
+  }
+  #hero h1, #hero h2, #hero h4, #hero p {
+    font-size: 1em;
+    padding: 2px 6px;
+    margin-bottom: 2px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 3px;
+  }
+  #hero button {
+    font-size: 0.95em;
+    padding: 8px 18px 8px 18px;
+    margin-bottom: 6px;
+  }
+}
+/* --- Compact Hero Section End --- */
+
+/* --- Modern Hero Section Layout Start --- */
+#hero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-height: 800px;
+  min-height: 220px;
+  height: 90vh;
+  padding: 0 40px;
+  gap: 32px;
+}
+#hero .hero-text {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-right: 24px;
+}
+#hero .hero-image {
+  flex: 1 1 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#hero .hero-image img {
+  max-width: 340px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+#hero h1, #hero h2, #hero h4, #hero p {
+  background: none;
+  margin-bottom: 8px;
+}
+#hero button {
+  margin-top: 10px;
+}
+@media (max-width: 991px) {
+  #hero {
+    padding: 0 10px;
+    gap: 16px;
+    max-height: 320px;
+    height: 40vh;
+  }
+  #hero .hero-image img {
+    max-width: 220px;
+  }
+}
+@media (max-width: 767px) {
+  #hero {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-height: none;
+    min-height: 120px;
+    height: auto;
+    padding: 10px 5px 10px 5px;
+    gap: 8px;
+  }
+  #hero .hero-text {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-right: 0;
+    text-align: center;
+  }
+  #hero .hero-image {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+  }
+  #hero .hero-image img {
+    max-width: 90vw;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  #hero h1, #hero h2, #hero h4, #hero p {
+    font-size: 1em;
+    margin-bottom: 4px;
+    background: none;
+    padding: 0;
+  }
+  #hero button {
+    font-size: 0.95em;
+    padding: 8px 18px 8px 18px;
+    margin-bottom: 6px;
+  }
+}
+/* --- Modern Hero Section Layout End --- */

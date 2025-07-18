@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - E-com</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <style>
+        body {
+            background: #f6f7fb;
+        }
+        .about-hero {
+            position: relative;
+            width: 100%;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .about-hero video {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; opacity: 0.45;
+        }
+        .about-hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(120deg, rgba(40,40,60,0.82) 60%, rgba(102,126,234,0.45) 100%);
+            z-index: 2;
+        }
+        .about-hero-content {
+            position: relative;
+            z-index: 3;
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            animation: fadeInDown 1.2s cubic-bezier(.77,0,.18,1);
+        }
+        .about-hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 18px;
+            letter-spacing: 2px;
+            font-weight: 800;
+            text-shadow: 0 4px 24px rgba(0,0,0,0.38), 0 1px 0 #222;
+            animation: fadeInUp 1.2s 0.2s both;
+        }
+        .about-hero-content p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto 18px auto;
+            opacity: 0.98;
+            color: #f3f3f3;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.32);
+            animation: fadeInUp 1.2s 0.4s both;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .about-gallery {
+            max-width: 1200px;
+            margin: 60px auto 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+            padding: 0 20px;
+        }
+        .about-gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.10);
+            cursor: pointer;
+            background: #fff;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1.1s cubic-bezier(.77,0,.18,1);
+        }
+        .about-gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s cubic-bezier(.77,0,.18,1);
+        }
+        .about-gallery-item:hover {
+            transform: translateY(-8px) scale(1.04);
+            box-shadow: 0 16px 40px rgba(102, 126, 234, 0.18);
+        }
+        .about-gallery-item:hover img {
+            transform: scale(1.08) rotate(-2deg);
+        }
+        .about-gallery-caption {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: linear-gradient(0deg, rgba(40,40,60,0.85) 60%, rgba(40,40,60,0.0) 100%);
+            color: #fff;
+            padding: 18px 20px 12px 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            opacity: 0.95;
+            pointer-events: none;
+        }
+        .about-section {
+            max-width: 1100px;
+            margin: 60px auto 40px auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.08);
+            padding: 48px 32px;
+            text-align: center;
+            animation: fadeInDown 1.2s cubic-bezier(.77,0,.18,1);
+        }
+        .about-section h2 {
+            color: #667eea;
+            font-size: 2.2rem;
+            margin-bottom: 18px;
+            font-weight: 800;
+        }
+        .about-section p {
+            color: #444;
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin: 0 auto 18px auto;
+        }
+        .about-team {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 36px;
+            margin-top: 36px;
+        }
+        .about-team-member {
+            background: #f6f7fb;
+            border-radius: 14px;
+            box-shadow: 0 4px 16px rgba(102, 126, 234, 0.07);
+            padding: 24px 18px 18px 18px;
+            width: 220px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            animation: fadeInUp 1.1s cubic-bezier(.77,0,.18,1);
+        }
+        .about-team-member img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 12px;
+            border: 3px solid #667eea;
+        }
+        .about-team-member h4 {
+            margin: 0 0 6px 0;
+            color: #333;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+        .about-team-member p {
+            color: #888;
+            font-size: 0.98rem;
+            margin: 0;
+        }
+        @media (max-width: 900px) {
+            .about-gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+            .about-section {
+                padding: 32px 10px;
+            }
+        }
+        @media (max-width: 600px) {
+            .about-hero-content h1 {
+                font-size: 2rem;
+            }
+            .about-gallery {
+                grid-template-columns: 1fr;
+            }
+            .about-gallery-item img {
+                height: 140px;
+            }
+            .about-section {
+                padding: 18px 2vw;
+            }
+            .about-team-member {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="header">
+        <a href="index.html"><img src="logo1-removebg-preview.png" class="logo" alt="logo" width="150px" height="80px"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a class="active" href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="paymentSection.html">Pay</a></li>
+                <li><a href="cart.html" id="cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+        <div>
+            <button id="login" onclick="window.location.href='index.html'"></button>
+        </div>
+    </section>
+    <!-- Hero Section with Video -->
+    <div class="about-hero">
+        <video src="img/about/1.mp4" autoplay loop muted playsinline></video>
+        <div class="about-hero-overlay"></div>
+        <div class="about-hero-content">
+            <h1>Welcome to E-com</h1>
+            <p>Where creativity meets commerce. We blend innovation, style, and technology to bring you the best shopping experience. Discover our story, our team, and our passion for fashion and e-commerce.</p>
+        </div>
+    </div>
+    <!-- Animated Gallery Section -->
+    <div class="about-gallery">
+        <div class="about-gallery-item" style="animation-delay:0.1s"><img src="img/about/a1.png" alt="Creative Design"><div class="about-gallery-caption">Creative Design</div></div>
+        <div class="about-gallery-item" style="animation-delay:0.2s"><img src="img/about/a2.jpg" alt="Modern Workspace"><div class="about-gallery-caption">Modern Workspace</div></div>
+        <div class="about-gallery-item" style="animation-delay:0.3s"><img src="img/about/a3.png" alt="Team Collaboration"><div class="about-gallery-caption">Team Collaboration</div></div>
+        <div class="about-gallery-item" style="animation-delay:0.4s"><img src="img/about/a4.png" alt="Inspiration"><div class="about-gallery-caption">Inspiration</div></div>
+        <div class="about-gallery-item" style="animation-delay:0.5s"><img src="img/about/a5.jpg" alt="Fashion Forward"><div class="about-gallery-caption">Fashion Forward</div></div>
+        <div class="about-gallery-item" style="animation-delay:0.6s"><img src="img/about/a6.jpg" alt="Our Studio"><div class="about-gallery-caption">Our Studio</div></div>
+        <div class="about-gallery-item" style="animation-delay:0.7s"><img src="img/about/banner.png" alt="Brand Banner"><div class="about-gallery-caption">Brand Banner</div></div>
+    </div>
+    <!-- Brand Story Section -->
+    <div class="about-section">
+        <h2>Our Story</h2>
+        <p>Founded with a vision to revolutionize online shopping, E-com is more than just a store. We are a team of dreamers, creators, and innovators dedicated to making fashion accessible, sustainable, and fun. Our journey began in a small studio, and today, we connect with thousands of customers who share our passion for style and technology.</p>
+        <p>We believe in the power of creativity, the importance of community, and the magic of a great shopping experience. Every product, every collection, and every story is crafted with care and a touch of inspiration.</p>
+        <div class="about-team">
+            <div class="about-team-member" style="animation-delay:0.1s"><img src="img/people/1.png" alt="Sathish"><h4>Sathish</h4><p>Founder & CEO</p></div>
+            <div class="about-team-member" style="animation-delay:0.2s"><img src="img/people/2.png" alt="Priya"><h4>Priya</h4><p>Lead Designer</p></div>
+            <div class="about-team-member" style="animation-delay:0.3s"><img src="img/people/3.png" alt="Rahul"><h4>Rahul</h4><p>Tech Lead</p></div>
+        </div>
+    </div>
+    <!-- End -->
+    <script>
+        // Animate gallery and team on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.about-gallery-item, .about-team-member');
+            const windowHeight = window.innerHeight;
+            elements.forEach(el => {
+                const position = el.getBoundingClientRect().top;
+                if (position < windowHeight - 60) {
+                    el.style.opacity = 1;
+                    el.style.transform = 'none';
+                } else {
+                    el.style.opacity = 0;
+                    el.style.transform = 'translateY(40px)';
+                }
+            });
+        }
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('resize', animateOnScroll);
+        document.addEventListener('DOMContentLoaded', animateOnScroll);
+    </script>
+</body>
+</html> 

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - E-com</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <style>
+        .shop-video-section {
+            width: 100%;
+            max-width: 900px;
+            margin: 40px auto 30px auto;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.12);
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .shop-video-section h2 {
+            margin: 0;
+            padding: 24px 0 10px 0;
+            font-size: 2rem;
+            color: #667eea;
+            letter-spacing: 1px;
+        }
+        .shop-video-player {
+            width: 100%;
+            background: #000;
+        }
+        .shop-video-player video {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            display: block;
+        }
+        @media (max-width: 700px) {
+            .shop-video-player video {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="header">
+        <a href="index.html"><img src="logo1-removebg-preview.png" class="logo" alt="logo" width="150px" height="80px"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="paymentSection.html">Pay</a></li>
+                <li><a href="cart.html" id="cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+        <div>
+            <button id="login" onclick="window.location.href='index.html'"></button>
+        </div>
+    </section>
+    <div class="shop-video-section">
+        <h2>Discover Our Shop</h2>
+        <div class="shop-video-player">
+            <video src="img/about/1.mp4" controls poster="img/about/banner.png"></video>
+        </div>
+    </div>
+    <!-- Add your shop product grid or content below -->
+    <div class="section-p1" style="max-width:1200px;margin:auto;">
+        <h2 style="color:#222;margin-bottom:24px;">Shop Our Latest Products</h2>
+        <!-- Search and Filters -->
+        <div style="display:flex;flex-wrap:wrap;gap:18px 24px;align-items:center;margin-bottom:28px;justify-content:space-between;">
+            <input id="shopSearch" type="text" placeholder="Search products..." style="flex:1 1 220px;max-width:320px;padding:10px 16px;border-radius:8px;border:1px solid #ccc;font-size:1rem;">
+            <div style="display:flex;gap:12px;align-items:center;">
+                <label style="font-size:1rem;color:#555;">Price:</label>
+                <input id="minPrice" type="number" placeholder="Min" style="width:70px;padding:6px 8px;border-radius:6px;border:1px solid #ccc;">
+                <span style="color:#888;">-</span>
+                <input id="maxPrice" type="number" placeholder="Max" style="width:70px;padding:6px 8px;border-radius:6px;border:1px solid #ccc;">
+            </div>
+        </div>
+        <!-- Product grid -->
+        <div id="shopGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;"></div>
+        <div id="shopEmptyMsg" style="text-align:center;color:#888;display:none;margin:40px 0;">No products found.</div>
+    </div>
+    <script>
+    // Sample product data (replace with backend fetch if needed)
+    const shopProducts = [
+        {name:'Premium Cotton T-Shirt', price:11499, image:'img/products/f1.jpg', brand:'adidas'},
+        {name:'Sport Performance Shirt', price:2499, image:'img/products/f2.jpg', brand:'adidas'},
+        {name:'Casual Comfort Tee', price:499, image:'img/products/f3.jpg', brand:'adidas'},
+        {name:'Urban Street Style', price:499, image:'img/products/f4.jpg', brand:'adidas'},
+        {name:'Classic Polo Shirt', price:499, image:'img/products/f5.jpg', brand:'adidas'},
+        {name:'Fashion Forward Tee', price:499, image:'img/products/f6.jpg', brand:'adidas'},
+        {name:'Trendy Graphic Shirt', price:499, image:'img/products/f7.jpg', brand:'adidas'},
+        {name:'Premium Designer Tee', price:399, image:'img/products/f8.jpg', brand:'adidas'},
+        {name:'Luxury Collection Shirt', price:11499, image:'img/products/f9.jpeg', brand:'adidas'},
+        {name:'Exclusive Limited Edition', price:11499, image:'img/products/f10.jpeg', brand:'adidas'}
+    ];
+    function renderShopGrid(products) {
+        const grid = document.getElementById('shopGrid');
+        const emptyMsg = document.getElementById('shopEmptyMsg');
+        grid.innerHTML = '';
+        if (!products.length) {
+            emptyMsg.style.display = 'block';
+            return;
+        } else {
+            emptyMsg.style.display = 'none';
+        }
+        products.forEach(prod => {
+            const card = document.createElement('div');
+            card.className = 'pro';
+            card.style.position = 'relative';
+            // Get average rating
+            const reviews = JSON.parse(localStorage.getItem('reviews_' + prod.name)) || [];
+            const avgRating = reviews.length ? (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1) : '—';
+            card.innerHTML = `
+                <img src="${prod.image}" alt="${prod.name}">
+                <div class="des">
+                    <span>${prod.brand}</span>
+                    <h5>${prod.name}</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span style='margin-left:8px;font-weight:600;color:#e67e22;'>${avgRating}</span>
+                    </div>
+                    <h4>₹${prod.price}</h4>
+                </div>
+                <button class="wishlist-btn" onclick="toggleWishlist('${prod.name}', ${prod.price}, '${prod.image}', this)"><i class="fa fa-heart"></i></button>
+                <button id="cart" onclick="addToCart('${prod.name}', ${prod.price}, '${prod.image}')"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+                <button class="review-btn" onclick="openReviewModal('${prod.name}')"><i class="fa fa-star"></i> Reviews</button>
+            `;
+            grid.appendChild(card);
+        });
+        if (window.updateWishlistButtons) updateWishlistButtons();
+    }
+    function filterShopProducts() {
+        const search = document.getElementById('shopSearch').value.toLowerCase();
+        const min = parseInt(document.getElementById('minPrice').value) || 0;
+        const max = parseInt(document.getElementById('maxPrice').value) || Infinity;
+        const filtered = shopProducts.filter(p =>
+            (p.name.toLowerCase().includes(search) || p.brand.toLowerCase().includes(search)) &&
+            p.price >= min && p.price <= max
+        );
+        renderShopGrid(filtered);
+    }
+    document.getElementById('shopSearch').addEventListener('input', filterShopProducts);
+    document.getElementById('minPrice').addEventListener('input', filterShopProducts);
+    document.getElementById('maxPrice').addEventListener('input', filterShopProducts);
+    document.addEventListener('DOMContentLoaded', () => {
+        renderShopGrid(shopProducts);
+    });
+    </script>
+<div id="reviewModal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.5);z-index:1000;align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:16px;max-width:400px;width:90vw;padding:32px 24px;box-shadow:0 8px 32px rgba(102,126,234,0.18);position:relative;">
+    <button onclick="closeReviewModal()" style="position:absolute;top:12px;right:16px;background:none;border:none;font-size:1.5em;color:#888;cursor:pointer;">&times;</button>
+    <h3 id="reviewProductTitle" style="color:#667eea;margin-bottom:12px;font-size:1.3em;"></h3>
+    <div id="reviewList" style="margin-bottom:18px;max-height:180px;overflow-y:auto;"></div>
+    <form id="reviewForm" onsubmit="submitReview(event)">
+      <div style="margin-bottom:10px;">
+        <label style="font-weight:600;">Your Rating:</label><br>
+        <span id="starInputs"></span>
+      </div>
+      <div style="margin-bottom:10px;">
+        <textarea id="reviewText" placeholder="Write your review..." style="width:100%;padding:8px 10px;border-radius:6px;border:1px solid #ccc;resize:vertical;min-height:50px;"></textarea>
+      </div>
+      <button type="submit" style="background:#667eea;color:#fff;padding:8px 22px;border:none;border-radius:6px;font-weight:600;">Submit</button>
+    </form>
+  </div>
+</div>
+<script>
+let currentReviewProduct = '';
+function openReviewModal(productName) {
+  currentReviewProduct = productName;
+  document.getElementById('reviewProductTitle').textContent = productName;
+  renderReviewList();
+  renderStarInputs();
+  document.getElementById('reviewModal').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeReviewModal() {
+  document.getElementById('reviewModal').style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+function renderReviewList() {
+  const reviews = JSON.parse(localStorage.getItem('reviews_' + currentReviewProduct)) || [];
+  const list = document.getElementById('reviewList');
+  if (!reviews.length) {
+    list.innerHTML = '<div style="color:#888;">No reviews yet. Be the first!</div>';
+    return;
+  }
+  list.innerHTML = reviews.map(r => `
+    <div style='margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #eee;'>
+      <span style='color:#e67e22;font-size:1.1em;'>${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</span>
+      <span style='color:#555;margin-left:8px;'>${r.text}</span>
+    </div>
+  `).join('');
+}
+function renderStarInputs() {
+  const starInputs = document.getElementById('starInputs');
+  starInputs.innerHTML = '';
+  for (let i = 1; i <= 5; i++) {
+    const star = document.createElement('span');
+    star.textContent = '★';
+    star.style.fontSize = '1.3em';
+    star.style.cursor = 'pointer';
+    star.style.color = '#bbb';
+    star.onmouseover = () => highlightStars(i);
+    star.onmouseout = () => highlightStars(0);
+    star.onclick = () => setRating(i);
+    starInputs.appendChild(star);
+  }
+  setRating(0);
+}
+let selectedRating = 0;
+function setRating(r) {
+  selectedRating = r;
+  const stars = document.getElementById('starInputs').children;
+  for (let i = 0; i < 5; i++) {
+    stars[i].style.color = i < r ? '#e67e22' : '#bbb';
+  }
+}
+function highlightStars(r) {
+  const stars = document.getElementById('starInputs').children;
+  for (let i = 0; i < 5; i++) {
+    stars[i].style.color = i < r ? '#e67e22' : '#bbb';
+  }
+}
+function submitReview(e) {
+  e.preventDefault();
+  const text = document.getElementById('reviewText').value.trim();
+  if (!selectedRating) { alert('Please select a rating!'); return; }
+  if (!text) { alert('Please write a review!'); return; }
+  const reviews = JSON.parse(localStorage.getItem('reviews_' + currentReviewProduct)) || [];
+  reviews.push({ rating: selectedRating, text });
+  localStorage.setItem('reviews_' + currentReviewProduct, JSON.stringify(reviews));
+  document.getElementById('reviewText').value = '';
+  setRating(0);
+  renderReviewList();
+  // Update average rating on product card
+  filterShopProducts();
+}
+window.openReviewModal = openReviewModal;
+window.closeReviewModal = closeReviewModal;
+</script>
+</body>
+</html> 

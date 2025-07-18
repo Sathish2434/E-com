@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wishlist - E-com</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <style>
+        .wishlist-container {
+            max-width: 1100px;
+            margin: 40px auto 30px auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.10);
+            padding: 32px 18px 24px 18px;
+        }
+        .wishlist-title {
+            text-align: center;
+            color: #667eea;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+        }
+        .wishlist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+        }
+        .wishlist-card {
+            background: #f6f7fb;
+            border-radius: 14px;
+            box-shadow: 0 4px 16px rgba(102, 126, 234, 0.07);
+            padding: 18px 12px 18px 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .wishlist-card:hover {
+            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.18);
+            transform: translateY(-4px) scale(1.02);
+        }
+        .wishlist-card img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.08);
+        }
+        .wishlist-card h5 {
+            font-size: 1.1rem;
+            color: #222;
+            margin: 0 0 8px 0;
+            font-weight: 700;
+            text-align: center;
+        }
+        .wishlist-card .price {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        .wishlist-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .wishlist-actions button {
+            background: #667eea;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 7px 18px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .wishlist-actions button:hover {
+            background: #e74c3c;
+        }
+        .wishlist-actions .add-cart-btn {
+            background: #27ae60;
+        }
+        .wishlist-actions .add-cart-btn:hover {
+            background: #219150;
+        }
+        .empty-wishlist {
+            text-align: center;
+            color: #888;
+            font-size: 1.2rem;
+            margin: 40px 0;
+        }
+        @media (max-width: 700px) {
+            .wishlist-container {
+                padding: 10px 2vw;
+            }
+            .wishlist-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="header">
+        <a href="index.html"><img src="logo1-removebg-preview.png" class="logo" alt="logo" width="150px" height="80px"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="paymentSection.html">Pay</a></li>
+                <li><a class="active" href="wishlist.html"><i class="fa fa-heart"></i> Wishlist</a></li>
+                <li><a href="cart.html" id="cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+        <div>
+            <button id="login" onclick="window.location.href='index.html'"></button>
+        </div>
+    </section>
+    <div class="wishlist-container">
+        <div class="wishlist-title">My Wishlist</div>
+        <div id="wishlistGrid" class="wishlist-grid"></div>
+        <div id="emptyWishlist" class="empty-wishlist" style="display:none;">Your wishlist is empty. Start adding your favorite products!</div>
+    </div>
+    <script>
+        function renderWishlist() {
+            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            const grid = document.getElementById('wishlistGrid');
+            const emptyMsg = document.getElementById('emptyWishlist');
+            grid.innerHTML = '';
+            if (wishlist.length === 0) {
+                emptyMsg.style.display = 'block';
+                return;
+            } else {
+                emptyMsg.style.display = 'none';
+            }
+            wishlist.forEach((item, idx) => {
+                const card = document.createElement('div');
+                card.className = 'wishlist-card';
+                card.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <h5>${item.name}</h5>
+                    <div class="price">₹${item.price}</div>
+                    <div class="wishlist-actions">
+                        <button onclick="removeFromWishlist(${idx})"><i class='fa fa-trash'></i> Remove</button>
+                        <button class="add-cart-btn" onclick="addToCartFromWishlist('${item.name.replace(/'/g, "\'")}', ${item.price}, '${item.image}')"><i class='fa fa-cart-arrow-down'></i> Add to Cart</button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+        function removeFromWishlist(idx) {
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            wishlist.splice(idx, 1);
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            renderWishlist();
+        }
+        function addToCartFromWishlist(name, price, image) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ name, price, image });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Product added to cart!');
+        }
+        document.addEventListener('DOMContentLoaded', renderWishlist);
+    </script>
+</body>
+</html> 

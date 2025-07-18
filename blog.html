@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Blog - E-com</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <style>
+        body {
+            background: #f6f7fb;
+        }
+        .blog-header {
+            text-align: center;
+            padding: 60px 20px 30px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+        }
+        .blog-header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        .blog-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px 40px 20px;
+        }
+        .blog-card {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.08);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+        .blog-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 16px 40px rgba(102, 126, 234, 0.18);
+        }
+        .blog-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-top-left-radius: 18px;
+            border-top-right-radius: 18px;
+        }
+        .blog-content {
+            padding: 28px 24px 24px 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-meta {
+            font-size: 0.95rem;
+            color: #888;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .blog-meta i {
+            color: #667eea;
+        }
+        .blog-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .blog-excerpt {
+            color: #555;
+            font-size: 1.05rem;
+            flex: 1;
+            margin-bottom: 18px;
+        }
+        .read-more {
+            align-self: flex-start;
+            background: #667eea;
+            color: #fff;
+            padding: 8px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: background 0.2s;
+        }
+        .read-more:hover {
+            background: #764ba2;
+        }
+        @media (max-width: 600px) {
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+            .blog-card img {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="header">
+        <a href="index.html"><img src="logo1-removebg-preview.png" class="logo" alt="logo" width="150px" height="80px"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a class="active" href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="paymentSection.html">Pay</a></li>
+                <li><a href="cart.html" id="cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+        <div>
+            <button id="login" onclick="window.location.href='index.html'"></button>
+        </div>
+    </section>
+    <div class="blog-header">
+        <h1>Our Creative Blog</h1>
+        <p>Inspiration, stories, and tips from the world of fashion and e-commerce. Discover the latest trends, behind-the-scenes, and more!</p>
+    </div>
+    <div class="blog-grid">
+        <!-- Blog Card 1 -->
+        <div class="blog-card">
+            <img src="img/blog/b1.jpg" alt="Fashion Trends 2024">
+            <div class="blog-content">
+                <div class="blog-meta"><i class="fa fa-calendar"></i> May 2024 <i class="fa fa-user"></i> Admin</div>
+                <div class="blog-title">Top Fashion Trends for 2024</div>
+                <div class="blog-excerpt">Explore the boldest and most creative fashion trends that are set to dominate 2024. From sustainable fabrics to futuristic designs, get inspired for your next look!</div>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <!-- Blog Card 2 -->
+        <div class="blog-card">
+            <img src="img/blog/b2.jpg" alt="E-commerce Success">
+            <div class="blog-content">
+                <div class="blog-meta"><i class="fa fa-calendar"></i> April 2024 <i class="fa fa-user"></i> Priya S.</div>
+                <div class="blog-title">How to Succeed in E-commerce</div>
+                <div class="blog-excerpt">Unlock the secrets to building a successful online store. Learn about branding, customer experience, and the latest digital marketing strategies for e-commerce growth.</div>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <!-- Blog Card 3 -->
+        <div class="blog-card">
+            <img src="img/blog/b3.jpg" alt="Sustainable Shopping">
+            <div class="blog-content">
+                <div class="blog-meta"><i class="fa fa-calendar"></i> March 2024 <i class="fa fa-user"></i> Rahul K.</div>
+                <div class="blog-title">Sustainable Shopping: A New Era</div>
+                <div class="blog-excerpt">Discover how eco-friendly shopping is changing the world. Tips for making sustainable choices and supporting brands that care about the planet.</div>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <!-- Blog Card 4 -->
+        <div class="blog-card">
+            <img src="img/blog/b4.jpg" alt="Behind the Scenes">
+            <div class="blog-content">
+                <div class="blog-meta"><i class="fa fa-calendar"></i> February 2024 <i class="fa fa-user"></i> E-com Team</div>
+                <div class="blog-title">Behind the Scenes: Our Creative Process</div>
+                <div class="blog-excerpt">Go behind the scenes with our design team and see how we bring new collections to life, from sketches to the final product photoshoot.</div>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <!-- Blog Card 5 -->
+        <div class="blog-card">
+            <img src="img/blog/b5.jpg" alt="Customer Stories">
+            <div class="blog-content">
+                <div class="blog-meta"><i class="fa fa-calendar"></i> January 2024 <i class="fa fa-user"></i> Guest Author</div>
+                <div class="blog-title">Customer Stories: Style Transformations</div>
+                <div class="blog-excerpt">Read inspiring stories from our customers who transformed their style and confidence with our products. Real people, real results!</div>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <!-- Blog Card 6 -->
+        <div class="blog-card">
+            <img src="img/blog/b6.jpg" alt="Tech in Fashion">
+            <div class="blog-content">
+                <div class="blog-meta"><i class="fa fa-calendar"></i> December 2023 <i class="fa fa-user"></i> Tech Team</div>
+                <div class="blog-title">The Role of Technology in Fashion</div>
+                <div class="blog-excerpt">Explore how technology is revolutionizing the fashion industry, from AI-powered recommendations to virtual try-ons and smart fabrics.</div>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <!-- Blog Card 7 -->
+        <div class="blog-card">
+            <img src="img/blog/b7.jpg" alt="Gift Guide">
+            <div class="blog-content">
+                <div class="blog-meta"><i class="fa fa-calendar"></i> November 2023 <i class="fa fa-user"></i> E-com Editors</div>
+                <div class="blog-title">Ultimate Gift Guide for Fashion Lovers</div>
+                <div class="blog-excerpt">Find the perfect gift for every fashion lover in your life. Our curated guide features unique, stylish, and thoughtful presents for all occasions.</div>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

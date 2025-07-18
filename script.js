@@ -38,6 +38,36 @@ window.handleLoginSuccess = function(userName) {
     window.location.href = 'index.html'; // Redirect back to home page
 };
 
+// Wishlist functionality
+window.toggleWishlist = function(name, price, image, btn) {
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    const index = wishlist.findIndex(item => item.name === name && item.price === price && item.image === image);
+    if (index === -1) {
+        wishlist.push({ name, price, image });
+        btn.classList.add('active');
+    } else {
+        wishlist.splice(index, 1);
+        btn.classList.remove('active');
+    }
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+};
+
+function updateWishlistButtons() {
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    document.querySelectorAll('.wishlist-btn').forEach(btn => {
+        const proDiv = btn.closest('.pro');
+        const name = proDiv.querySelector('h5').innerText;
+        const price = parseInt(proDiv.querySelector('h4').innerText.replace(/[^\d]/g, ''));
+        const image = proDiv.querySelector('img').getAttribute('src');
+        const isInWishlist = wishlist.some(item => item.name === name && item.price === price && item.image === image);
+        if (isInWishlist) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+}
+
 // Attach event listeners to dynamically created cart buttons
 function setupDynamicCartButtons() {
     document.querySelectorAll('.add-to-cart').forEach(btn => {
@@ -53,9 +83,35 @@ function setupDynamicCartButtons() {
     });
 }
 
+// Hamburger menu toggle for mobile
+function setupHamburgerMenu() {
+    const hamburger = document.getElementById('hamburger-menu');
+    const navbar = document.getElementById('navbar');
+    function updateHamburgerVisibility() {
+        if (window.innerWidth <= 768) {
+            hamburger.style.display = 'block';
+            navbar.style.display = 'none';
+        } else {
+            hamburger.style.display = 'none';
+            navbar.style.display = 'flex';
+        }
+    }
+    hamburger.addEventListener('click', function() {
+        if (navbar.style.display === 'none' || navbar.style.display === '') {
+            navbar.style.display = 'flex';
+            navbar.style.flexDirection = 'column';
+        } else {
+            navbar.style.display = 'none';
+        }
+    });
+    window.addEventListener('resize', updateHamburgerVisibility);
+    updateHamburgerVisibility();
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   // Check login status and update button
   checkLoginStatus();
+  setupHamburgerMenu();
   
   const productContainer = document.querySelector(".pro-container");
 
@@ -88,4 +144,5 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Setup event listeners for dynamic cart buttons
   setupDynamicCartButtons();
+  updateWishlistButtons();
 });
