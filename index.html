@@ -1,1065 +1,1206 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping App</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
-    <link rel="stylesheet" href="style.css">
-    <style>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Shopping App</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+        <link rel="stylesheet" href="style.css">
+        <style>
 
-    </style>
-</head>
-<body>
+        </style>
+    </head>
+    <body>
 
-    <section id="header">
-        <a href="sathish.com"><img src="logo1-removebg-preview.png" class="logo" alt="logo" width="150px" height="80px"></a>
+        <section id="header">
+            <a href="sathish.com"><img src="logo1-removebg-preview.png" class="logo" alt="logo" width="150px" height="80px"></a>
 
-        <div>
-            <ul id="navbar">
-                <li><a class="active" href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="paymentSection.html">Pay</a></li>
-                <li><a href="wishlist.html"><i class="fa fa-heart"></i> Wishlist</a></li>
-                <li><a href="cart.html" id="cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a></li>
+            <div>
+                <ul id="navbar">
+                    <li><a class="active" href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="paymentSection.html">Pay</a></li>
+                    <li><a href="wishlist.html"><i class="fa fa-heart"></i> Wishlist</a></li>
+                    <li><a href="cart.html" id="cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <button id="login" onclick="window.location.href='login/Login UI.html'"></button>
+                <!-- Hamburger menu for mobile -->
+                <button id="hamburger-menu" aria-label="Open navigation" style="display:none; background:none; border:none; font-size:2em; cursor:pointer;">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+
+        </section>
+
+        <section id="hero">
+            <div class="hero-text">
+                <h4>Trade-in-Offer</h4>
+                <h2>Super value deals</h2>
+                <h1>On all products</h1>
+                <p>Save more coupons & up to 70% off!</p>
+                <button>Shop Now</button>
+            </div>
+
+        </section>
+
+        <section id="feature" class="section-p1">
+            <div class="fe-box">
+                <img src="img/features/f1.png" alt="">
+                <h6>Free Shipping</h6>
+            </div>
+
+            <div class="fe-box">
+                <img src="img/features/f2.png" alt="">
+                <h6>Online Order</h6>
+            </div>
+
+            <div class="fe-box">
+                <img src="img/features/f3.png" alt="">
+                <h6>Save Money</h6>
+            </div>
+
+            <div class="fe-box">
+                <img src="img/features/f4.png" alt="">
+                <h6>Promotions</h6>
+            </div>
+
+            <div class="fe-box">
+                <img src="img/features/f5.png" alt="">
+                <h6>Happy Sell</h6>
+            </div>
+
+            <div class="fe-box">
+                <img src="img/features/f6.png" alt="">
+                <h6>F24/7 Support</h6>
+            </div>
+        </section>
+
+        <section id="product1" class="section-p1">
+            <h2>Featured Products</h2>
+            <p>Summer Collection New Modern Design</p>
+            <div class="pro-container">
+                <div class="pro">
+                    <img src="img/products/f1.jpg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Premium Cotton T-Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹1499/-</h4>    
+                    </div>
+                    <button class="wishlist-btn" onclick="toggleWishlist('Premium Cotton T-Shirt', 1499, 'img/products/f1.jpg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Premium Cotton T-Shirt', 1499, 'img/products/f1.jpg')">
+                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/f2.jpg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Sport Performance Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹2499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Sport Performance Shirt', 2499, 'img/products/f2.jpg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Sport Performance Shirt', 2499, 'img/products/f2.jpg')">
+                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/f3.jpg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Casual Comfort Tee</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Casual Comfort Tee', 499, 'img/products/f3.jpg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Casual Comfort Tee', 499, 'img/products/f3.jpg')">
+                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/f4.jpg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Urban Street Style</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Urban Street Style', 499, 'img/products/f4.jpg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Urban Street Style', 499, 'img/products/f4.jpg')">
+                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/f5.jpg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Classic Polo Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Classic Polo Shirt', 499, 'img/products/f5.jpg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Classic Polo Shirt', 499, 'img/products/f5.jpg')">
+                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/f6.jpg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Fashion Forward Tee</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Fashion Forward Tee', 499, 'img/products/f6.jpg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Fashion Forward Tee', 499, 'img/products/f6.jpg')">
+                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/f7.jpg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Trendy Graphic Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Trendy Graphic Shirt', 499, 'img/products/f7.jpg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                        <button id="cart" onclick="addToCart('Trendy Graphic Shirt', 499, 'img/products/f7.jpg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/f8.jpg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Premium Designer Tee</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹399/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Premium Designer Tee', 399, 'img/products/f8.jpg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Premium Designer Tee', 399, 'img/products/f8.jpg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/f9.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Luxury Collection Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹11499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Luxury Collection Shirt', 11499, 'img/products/f9.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Luxury Collection Shirt', 11499, 'img/products/f9.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/f10.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Exclusive Limited Edition</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹299/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Exclusive Limited Edition', 299, 'img/products/f10.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Exclusive Limited Edition', 299, 'img/products/f10.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/f11.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Signature Series Tee</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Signature Series Tee', 499, 'img/products/f11.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Signature Series Tee', 499, 'img/products/f11.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/f12.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Elite Performance Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹599/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Elite Performance Shirt', 599, 'img/products/f12.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Elite Performance Shirt', 599, 'img/products/f12.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/f21.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Modern Streetwear</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Modern Streetwear', 499, 'img/products/f21.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Modern Streetwear', 499, 'img/products/f21.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/f22.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Premium Athletic Wear</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                            <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Premium Athletic Wear', 499, 'img/products/f22.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Premium Athletic Wear', 499, 'img/products/f22.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/f23.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Designer Collection</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹119/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Designer Collection', 119, 'img/products/f23.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Designer Collection', 119, 'img/products/f23.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/f24.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Luxury Street Style</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹119/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Luxury Street Style', 119, 'img/products/f24.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Luxury Street Style', 119, 'img/products/f24.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/f25.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Exclusive Designer Tee</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹114/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Exclusive Designer Tee', 114, 'img/products/f17.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Exclusive Designer Tee', 114, 'img/products/f17.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/f18.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Premium Fashion Tee</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Premium Fashion Tee', 499, 'img/products/f18.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Premium Fashion Tee', 499, 'img/products/f18.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/f19.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Vintage Retro Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹199/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Vintage Retro Shirt', 199, 'img/products/f19.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Vintage Retro Shirt', 199, 'img/products/f19.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/f20.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Contemporary Style Tee</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹119/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Contemporary Style Tee', 119, 'img/products/f20.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Contemporary Style Tee', 119, 'img/products/f20.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/f22.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Urban Fashion Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹119/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Urban Fashion Shirt', 119, 'img/products/f22.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Urban Fashion Shirt', 119, 'img/products/f22.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/f23.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Modern Casual Tee</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹119/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Modern Casual Tee', 119, 'img/products/f23.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Modern Casual Tee', 119, 'img/products/f23.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/f24.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Trendy Lifestyle Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹119/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Trendy Lifestyle Shirt', 119, 'img/products/f24.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Trendy Lifestyle Shirt', 119, 'img/products/f24.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/f25.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Premium Lifestyle Tee</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹119/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Premium Lifestyle Tee', 119, 'img/products/f25.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Premium Lifestyle Tee', 119, 'img/products/f25.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+            
+            </div>
+
+        </section>
+
+        <section id="banner" class="section-m1">
+            <h4>Repair Services</h4>
+            <h2>Up to <span>70% off</span> - All t-Shirts & Accessories</h2>
+            <button class="normal">Explore More</button>
+        </section>
+
+        <section id="product1" class="section-p1">
+            <h2>New Arrivals</h2>
+            <p>Summer Colletion New Morden Design</p>
+            <div class="pro-container">
+                <div class="pro">
+                    <img src="img/products/n1.jpg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>New Arrival Casual Tee</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('New Arrival Casual Tee', 499, 'img/products/n1.jpg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('New Arrival Casual Tee', 499, 'img/products/n1.jpg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/n2.jpg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Fresh Style Shirt</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Fresh Style Shirt', 499, 'img/products/n2.jpg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Fresh Style Shirt', 499, 'img/products/n2.jpg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/n3.jpg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Latest Fashion Tee</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Latest Fashion Tee', 499, 'img/products/n3.jpg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Latest Fashion Tee', 499, 'img/products/n3.jpg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/n4.jpg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Trendy New Arrival</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Trendy New Arrival', 499, 'img/products/n4.jpg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Trendy New Arrival', 499, 'img/products/n4.jpg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/n5.jpg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cartoon Astronaut T-Shirts</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Cartoon Astronaut T-Shirts', 499, 'img/products/n5.jpg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 499, 'img/products/n5.jpg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/n6.jpg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cartoon Astronaut T-Shirts</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Cartoon Astronaut T-Shirts', 499, 'img/products/n6.jpg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 499, 'img/products/n6.jpg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/n7.jpg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cartoon Astronaut T-Shirts</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Cartoon Astronaut T-Shirts', 499, 'img/products/n7.jpg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 499, 'img/products/n7.jpg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/n8.jpg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cartoon Astronaut T-Shirts</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Cartoon Astronaut T-Shirts', 499, 'img/products/n8.jpg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 499, 'img/products/n8.jpg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/n9.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cartoon Astronaut T-Shirts</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Cartoon Astronaut T-Shirts', 499, 'img/products/n9.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 499, 'img/products/n9.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/n10.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cartoon Astronaut T-Shirts</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Cartoon Astronaut T-Shirts', 499, 'img/products/n10.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 499, 'img/products/n10.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/n11.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cartoon Astronaut T-Shirts</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Cartoon Astronaut T-Shirts', 499, 'img/products/n11.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 499, 'img/products/n11.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/n12.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cartoon Astronaut T-Shirts</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Cartoon Astronaut T-Shirts', 499, 'img/products/n12.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 499, 'img/products/n12.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/n13.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cartoon Astronaut T-Shirts</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Cartoon Astronaut T-Shirts', 499, 'img/products/n13.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 499, 'img/products/n13.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/n14.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cartoon Astronaut T-Shirts</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Cartoon Astronaut T-Shirts', 499, 'img/products/n14.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 499, 'img/products/n14.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/n15.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cartoon Astronaut T-Shirts</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Cartoon Astronaut T-Shirts', 499, 'img/products/n15.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 499, 'img/products/n15.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/n16.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cartoon Astronaut T-Shirts</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Cartoon Astronaut T-Shirts', 499, 'img/products/n16.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 499, 'img/products/n16.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/n17.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cartoon Astronaut T-Shirts</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Cartoon Astronaut T-Shirts', 499, 'img/products/n17.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 499, 'img/products/n17.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/n18.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cartoon Astronaut T-Shirts</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Cartoon Astronaut T-Shirts', 499, 'img/products/n18.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 499, 'img/products/n18.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/n19.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cartoon Astronaut T-Shirts</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Cartoon Astronaut T-Shirts', 499, 'img/products/n19.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 499, 'img/products/n19.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/n20.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cartoon Astronaut T-Shirts</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Cartoon Astronaut T-Shirts', 499, 'img/products/n20.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 499, 'img/products/n20.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/n21.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cartoon Astronaut T-Shirts</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Cartoon Astronaut T-Shirts', 499, 'img/products/n21.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 499, 'img/products/n21.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/n22.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cartoon Astronaut T-Shirts</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Cartoon Astronaut T-Shirts', 499, 'img/products/n22.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 499, 'img/products/n22.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/n23.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cartoon Astronaut T-Shirts</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Cartoon Astronaut T-Shirts', 499, 'img/products/n23.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 499, 'img/products/n23.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+                <div class="pro">
+                    <img src="img/products/n24.jpeg" alt="">
+                    <div class="des">
+                        <span>adidas</span>
+                        <h5>Cartoon Astronaut T-Shirts</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>₹499/-/-</h4>
+                    </div>
+                                    <button class="wishlist-btn" onclick="toggleWishlist('Cartoon Astronaut T-Shirts', 499, 'img/products/n24.jpeg', this)">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                    <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 499, 'img/products/n24.jpeg')">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                </div>
+            
+            </div>
+
+        </section>
+
+        <section id="sm-banner" class="section-p1">
+            <div class="banner-box">
+                <h4>Crazy deals</h4>
+                <h2>Buy 1 get 1 free</h2>
+                <span>The best classic dress is on sale at cara</span>
+                <button class="white">Learn More</button>
+            </div>
+
+            <div class="banner-box banner-box2">
+                <h4>Spring/Summer</h4>
+                <h2>Upcoming Season</h2>
+                <span>The best classic dress is on sale at cara</span>
+                <button class="white">Collection</button>
+            </div>
+        </section>
+        <section id="banner3">
+            <div class="banner-box">
+                <h2>SEASONAL SALE</h2>
+                <h3>Winter Collection -50% OFF</h3>
+            </div>
+            <div class="banner-box banner-box2">
+                <h2>NEW FOOTWEAR COLLECTION</h2>
+                <h3>Spring/Summer 2023</h3>
+            </div>
+            <div class="banner-box banner-box3">
+                <h2>T-SHIRTS</h2>
+                <h3>New Trendy Prints</h3>
+            </div>
+        </section>
+
+        <section id="newsletter" class="section-p1" class="section-m1">
+            <div class="newstext">
+                <h4>Sign Up For Newsletter</h4>
+
+                <p>Get E-mail updates about our latest shop and <span>special offers.</span></p>
+            </div>
+            <div class="form">
+                <input type="text" placeholder="Your E-Mail address">
+                <button class="normal">Sign Up</button>
+            </div>
+        </section>
+
+        <footer>
+        <div class="content">
+                <div class="top">
+                    <div class="logo-details">
+                        <i class="fab fa-slack"></i>
+                        <span class="logo_name">Logo</span>
+                    </div>
+                </div>
+        </div>
+        <div id="link-boxes">
+            <ul class="box">
+                <li class="link_name">Company</li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Our Partners</a></li>
+            </ul>
+            <ul class="box">
+                <li class="link_name">Services</li>
+                <li><a href="#">Website Design</a></li>
+                <li><a href="#">App Design</a></li>
+                <li><a href="#">Logo Design</a></li>
+                <li><a href="#">Card Design</a></li>
+            </ul>
+            <ul class="box input-box">
+                <li class="link_name">Subscribe To News</li>
+                <li><input type="text" placeholder="Enter Your E-Mail"></li>
+                <li><input type="button" value="Subscribe"></li>
             </ul>
         </div>
+        <div class="bottom-details">
+                <div class="bottom_text">
+                    <span class="copyright_text">Copyright © 2023<a href="#">Company name</a></span>
+                    <span class="policy_terms">
+                        <a href="#">Privacy policy</a>
+                        <a href="#">Terms & condition</a>
+                    </span>
+                </div>
+            </div>
+        </footer>
 
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <button id="login" onclick="window.location.href='login/Login UI.html'"></button>
-            <!-- Hamburger menu for mobile -->
-            <button id="hamburger-menu" aria-label="Open navigation" style="display:none; background:none; border:none; font-size:2em; cursor:pointer;">
-                <i class="fa fa-bars"></i>
-            </button>
-        </div>
+        <script src="script.js">
 
-    </section>
-
-    <section id="hero">
-        <div class="hero-text">
-            <h4>Trade-in-Offer</h4>
-            <h2>Super value deals</h2>
-            <h1>On all products</h1>
-            <p>Save more coupons & up to 70% off!</p>
-            <button>Shop Now</button>
-        </div>
-
-    </section>
-
-    <section id="feature" class="section-p1">
-        <div class="fe-box">
-            <img src="img/features/f1.png" alt="">
-            <h6>Free Shipping</h6>
-        </div>
-
-        <div class="fe-box">
-            <img src="img/features/f2.png" alt="">
-            <h6>Online Order</h6>
-        </div>
-
-        <div class="fe-box">
-            <img src="img/features/f3.png" alt="">
-            <h6>Save Money</h6>
-        </div>
-
-        <div class="fe-box">
-            <img src="img/features/f4.png" alt="">
-            <h6>Promotions</h6>
-        </div>
-
-        <div class="fe-box">
-            <img src="img/features/f5.png" alt="">
-            <h6>Happy Sell</h6>
-        </div>
-
-        <div class="fe-box">
-            <img src="img/features/f6.png" alt="">
-            <h6>F24/7 Support</h6>
-        </div>
-    </section>
-
-    <section id="product1" class="section-p1">
-        <h2>Featured Products</h2>
-        <p>Summer Collection New Modern Design</p>
-        <div class="pro-container">
-            <div class="pro">
-                <img src="img/products/f1.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Premium Cotton T-Shirt</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹11499/-</h4>
-                </div>
-                <button class="wishlist-btn" onclick="toggleWishlist('Premium Cotton T-Shirt', 11499, 'img/products/f1.jpg', this)">
-                    <i class="fa fa-heart"></i>
-                </button>
-                <button id="cart" onclick="addToCart('Premium Cotton T-Shirt', 11499, 'img/products/f1.jpg')">
-                    <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/f2.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Sport Performance Shirt</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹2499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Sport Performance Shirt', 2499, 'img/products/f2.jpg')">
-                    <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/f3.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Casual Comfort Tee</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Casual Comfort Tee', 499, 'img/products/f3.jpg')">
-                    <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/f4.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Urban Street Style</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Urban Street Style', 499, 'img/products/f4.jpg')">
-                    <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/f5.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Classic Polo Shirt</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Classic Polo Shirt', 499, 'img/products/f5.jpg')">
-                    <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/f6.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Fashion Forward Tee</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Fashion Forward Tee', 499, 'img/products/f6.jpg')">
-                    <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/f7.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Trendy Graphic Shirt</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                    <button id="cart" onclick="addToCart('Trendy Graphic Shirt', 499, 'img/products/f7.jpg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/f8.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Premium Designer Tee</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹399/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Premium Designer Tee', 399, 'img/products/f8.jpg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/f9.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Luxury Collection Shirt</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹11499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Luxury Collection Shirt', 11499, 'img/products/f9.jpeg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/f10.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Exclusive Limited Edition</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹299/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Exclusive Limited Edition', 299, 'img/products/f10.jpeg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/f11.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Signature Series Tee</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Signature Series Tee', 499, 'img/products/f11.jpeg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/f12.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Elite Performance Shirt</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹599/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Elite Performance Shirt', 599, 'img/products/f12.jpeg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/f21.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Modern Streetwear</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Modern Streetwear', 499, 'img/products/f21.jpeg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/f22.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Premium Athletic Wear</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                        <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Premium Athletic Wear', 499, 'img/products/f22.jpeg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/f23.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Designer Collection</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹119/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Designer Collection', 119, 'img/products/f23.jpeg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/f24.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Luxury Street Style</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹119/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Luxury Street Style', 119, 'img/products/f24.jpeg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/f25.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Exclusive Designer Tee</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹114/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Exclusive Designer Tee', 114, 'img/products/f17.jpeg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/f18.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Premium Fashion Tee</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Premium Fashion Tee', 499, 'img/products/f18.jpeg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/f19.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Vintage Retro Shirt</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹199/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Vintage Retro Shirt', 199, 'img/products/f19.jpeg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/f20.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Contemporary Style Tee</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹119/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Contemporary Style Tee', 119, 'img/products/f20.jpeg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/f22.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Urban Fashion Shirt</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹119/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Urban Fashion Shirt', 119, 'img/products/f22.jpeg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/f23.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Modern Casual Tee</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹119/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Modern Casual Tee', 119, 'img/products/f23.jpeg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/f24.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Trendy Lifestyle Shirt</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹119/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Trendy Lifestyle Shirt', 119, 'img/products/f24.jpeg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/f25.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Premium Lifestyle Tee</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹119/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Premium Lifestyle Tee', 119, 'img/products/f25.jpeg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-           
-        </div>
-
-    </section>
-
-    <section id="banner" class="section-m1">
-        <h4>Repair Services</h4>
-        <h2>Up to <span>70% off</span> - All t-Shirts & Accessories</h2>
-        <button class="normal">Explore More</button>
-    </section>
-
-    <section id="product1" class="section-p1">
-        <h2>New Arrivals</h2>
-        <p>Summer Colletion New Morden Design</p>
-        <div class="pro-container">
-            <div class="pro">
-                <img src="img/products/n1.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>New Arrival Casual Tee</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('New Arrival Casual Tee', 499, 'img/products/n1.jpg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/n2.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Fresh Style Shirt</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Fresh Style Shirt', 499, 'img/products/n2.jpg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/n3.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Latest Fashion Tee</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Latest Fashion Tee', 499, 'img/products/n3.jpg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/n4.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Trendy New Arrival</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Trendy New Arrival', 499, 'img/products/n4.jpg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/n5.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 11499, 'img/products/f1.jpg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/n6.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 11499, 'img/products/f1.jpg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/n7.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 11499, 'img/products/f1.jpg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/n8.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 11499, 'img/products/f1.jpg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/n9.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 11499, 'img/products/f1.jpg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/n10.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 11499, 'img/products/f1.jpg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/n11.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 11499, 'img/products/f1.jpg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/n12.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 11499, 'img/products/f1.jpg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/n13.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 11499, 'img/products/f1.jpg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/n14.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 11499, 'img/products/f1.jpg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/n15.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 11499, 'img/products/f1.jpg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/n16.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 11499, 'img/products/f1.jpg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/n17.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 11499, 'img/products/f1.jpg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/n18.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 11499, 'img/products/f1.jpg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/n19.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 11499, 'img/products/f1.jpg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/n20.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 11499, 'img/products/f1.jpg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/n21.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 11499, 'img/products/f1.jpg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/n22.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 11499, 'img/products/f1.jpg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/n23.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 11499, 'img/products/f1.jpg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-            <div class="pro">
-                <img src="img/products/n24.jpeg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>₹499/-/-</h4>
-                </div>
-                <button id="cart" onclick="addToCart('Cartoon Astronaut T-Shirts', 11499, 'img/products/f1.jpg')">
-                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                    </button>
-            </div>
-           
-        </div>
-
-    </section>
-
-    <section id="sm-banner" class="section-p1">
-        <div class="banner-box">
-            <h4>Crazy deals</h4>
-            <h2>Buy 1 get 1 free</h2>
-            <span>The best classic dress is on sale at cara</span>
-            <button class="white">Learn More</button>
-        </div>
-
-        <div class="banner-box banner-box2">
-            <h4>Spring/Summer</h4>
-            <h2>Upcoming Season</h2>
-            <span>The best classic dress is on sale at cara</span>
-            <button class="white">Collection</button>
-        </div>
-    </section>
-    <section id="banner3">
-        <div class="banner-box">
-            <h2>SEASONAL SALE</h2>
-            <h3>Winter Collection -50% OFF</h3>
-        </div>
-        <div class="banner-box banner-box2">
-            <h2>NEW FOOTWEAR COLLECTION</h2>
-            <h3>Spring/Summer 2023</h3>
-        </div>
-        <div class="banner-box banner-box3">
-            <h2>T-SHIRTS</h2>
-            <h3>New Trendy Prints</h3>
-        </div>
-    </section>
-
-    <section id="newsletter" class="section-p1" class="section-m1">
-        <div class="newstext">
-            <h4>Sign Up For Newsletter</h4>
-
-            <p>Get E-mail updates about our latest shop and <span>special offers.</span></p>
-        </div>
-        <div class="form">
-            <input type="text" placeholder="Your E-Mail address">
-            <button class="normal">Sign Up</button>
-        </div>
-    </section>
-
-    <footer>
-       <div class="content">
-            <div class="top">
-                <div class="logo-details">
-                    <i class="fab fa-slack"></i>
-                    <span class="logo_name">Logo</span>
-                </div>
-            </div>
-       </div>
-       <div id="link-boxes">
-        <ul class="box">
-            <li class="link_name">Company</li>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Our Partners</a></li>
-        </ul>
-        <ul class="box">
-            <li class="link_name">Services</li>
-            <li><a href="#">Website Design</a></li>
-            <li><a href="#">App Design</a></li>
-            <li><a href="#">Logo Design</a></li>
-            <li><a href="#">Card Design</a></li>
-        </ul>
-        <ul class="box input-box">
-            <li class="link_name">Subscribe To News</li>
-            <li><input type="text" placeholder="Enter Your E-Mail"></li>
-            <li><input type="button" value="Subscribe"></li>
-        </ul>
-       </div>
-       <div class="bottom-details">
-            <div class="bottom_text">
-                <span class="copyright_text">Copyright © 2023<a href="#">Company name</a></span>
-                <span class="policy_terms">
-                     <a href="#">Privacy policy</a>
-                    <a href="#">Terms & condition</a>
-                </span>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js">
-
-    </script>
-</body>
-</html>
+        </script>
+    </body>
+    </html>

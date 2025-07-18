@@ -1688,3 +1688,168 @@ html, body {
   }
 }
 /* --- Modern Hero Section Layout End --- */
+
+/* --- Shop Page Responsive Grid and Video --- */
+#shopGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+@media (max-width: 1199px) {
+  #shopGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 900px) {
+  #shopGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  #shopGrid {
+    grid-template-columns: 1fr;
+  }
+}
+#shopGrid .pro {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid #cce7d0;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.04);
+  padding: 12px 10px 18px 10px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin: 0;
+}
+#shopGrid .pro img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+#shopGrid .des {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 8px;
+}
+#shopGrid .star {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+#shopGrid .wishlist-btn, #shopGrid #cart, #shopGrid .review-btn {
+  margin: 4px 4px 0 0;
+}
+
+/* Responsive video section for shop.html */
+.shop-video-section {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto 30px auto;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.12);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.shop-video-player {
+  width: 100%;
+  background: #000;
+}
+.shop-video-player video {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+@media (max-width: 900px) {
+  .shop-video-player video {
+    height: 260px;
+  }
+}
+@media (max-width: 600px) {
+  .shop-video-player video {
+    height: 160px;
+  }
+}
+/* --- End Shop Page Responsive Grid and Video --- */
+
+/* --- Modern Product Buttons and Gold Stars --- */
+/* Modern button styles for product cards */
+.wishlist-btn, #cart, .review-btn {
+  background: #f5f6fa;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 10px 16px;
+  margin: 4px 4px 0 0;
+  font-size: 1.1em;
+  color: #222;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.wishlist-btn.active, .wishlist-btn:hover {
+  background: #ffeaea;
+  color: #e74c3c;
+  transform: scale(1.08);
+}
+#cart:hover, .review-btn:hover {
+  background: #e3e6f3;
+  color: #088178;
+  transform: scale(1.08);
+}
+.review-btn {
+  border-radius: 24px;
+  background: #f5f6fa;
+  color: #e67e22;
+  font-weight: 600;
+  padding: 8px 18px;
+  margin-top: 8px;
+}
+.review-btn:hover {
+  background: #fff7e6;
+  color: #d35400;
+}
+
+/* Gold star color for all ratings */
+.star i, .fa-star, .fas.fa-star {
+  color: #FFD700 !important;
+}
+
+/* --- End Modern Product Buttons and Gold Stars --- */
+
+/* --- Wishlist and Cart Button Positioning --- */
+.pro {
+  position: relative;
+}
+/* --- Wishlist Button Top-Right Only --- */
+.wishlist-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  left: auto;
+  z-index: 2;
+}
+#cart {
+  position: static;
+  top: auto;
+  right: auto;
+  z-index: auto;
+}
+/* Ensure buttons do not overlap image corners too much */
+.pro img {
+  border-radius: 12px;
+}
+/* --- End Wishlist and Cart Button Positioning --- */

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - E-com</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <style>
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e0e7ff 0%, #f5f7fa 100%);
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-container {
+            max-width: 700px;
+            margin: 64px auto 40px auto;
+            background: rgba(255,255,255,0.8);
+            border-radius: 32px;
+            box-shadow: 0 12px 48px rgba(102, 126, 234, 0.18);
+            padding: 64px 48px 48px 48px;
+            backdrop-filter: blur(12px);
+            animation: fadeIn 1.1s cubic-bezier(.4,0,.2,1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: none; }
+        }
+        .contact-container h2 {
+            color: #667eea;
+            margin-bottom: 36px;
+            text-align: center;
+            font-size: 2.7em;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+        .form-group {
+            position: relative;
+            margin-bottom: 16px;
+        }
+        .contact-form input, .contact-form textarea, .contact-form select {
+            width: 100%;
+            padding: 22px 18px 22px 18px;
+            border-radius: 18px;
+            border: 2px solid #cce7d0;
+            font-size: 1.25rem;
+            background: rgba(245,246,250,0.85);
+            outline: none;
+            transition: border 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(102,126,234,0.06);
+        }
+        .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
+            border: 1.5px solid #667eea;
+            box-shadow: 0 2px 12px rgba(102,126,234,0.10);
+        }
+        .contact-form label {
+            position: absolute;
+            left: 22px;
+            top: 22px;
+            color: #888;
+            font-size: 1.15em;
+            pointer-events: none;
+            background: transparent;
+            transition: 0.2s cubic-bezier(.4,0,.2,1);
+        }
+        .contact-form input:focus + label,
+        .contact-form input:not(:placeholder-shown) + label,
+        .contact-form textarea:focus + label,
+        .contact-form textarea:not(:placeholder-shown) + label,
+        .contact-form select:focus + label,
+        .contact-form select:not([value=""]) + label {
+            top: -14px;
+            left: 14px;
+            font-size: 1em;
+            color: #667eea;
+            background: #fff;
+            padding: 0 8px;
+            border-radius: 6px;
+        }
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .contact-form button {
+            background: linear-gradient(90deg, #667eea 0%, #5eead4 100%);
+            color: #fff;
+            border: none;
+            border-radius: 18px;
+            padding: 20px 0;
+            font-size: 1.35em;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 4px 18px rgba(102,126,234,0.13);
+            transition: background 0.2s, transform 0.13s;
+            margin-top: 12px;
+        }
+        .contact-form button:hover {
+            background: linear-gradient(90deg, #5eead4 0%, #667eea 100%);
+            transform: scale(1.04);
+        }
+        .contact-form button:active {
+            transform: scale(0.98);
+        }
+        .contact-info {
+            margin-top: 48px;
+            text-align: center;
+        }
+        .contact-info p {
+            color: #555;
+            margin-bottom: 14px;
+            font-size: 1.18em;
+        }
+        .contact-info .social-icons {
+            margin-top: 18px;
+        }
+        .contact-info .social-icons a {
+            color: #667eea;
+            margin: 0 16px;
+            font-size: 2.2em;
+            transition: color 0.2s, transform 0.2s;
+            display: inline-block;
+        }
+        .contact-info .social-icons a:hover {
+            color: #5eead4;
+            transform: scale(1.18) rotate(-8deg);
+        }
+        .contact-success {
+            background: #e6ffed;
+            color: #088178;
+            border-radius: 18px;
+            padding: 36px 12px 28px 12px;
+            text-align: center;
+            margin-bottom: 24px;
+            font-weight: 800;
+            font-size: 1.35em;
+            animation: fadeIn 0.7s cubic-bezier(.4,0,.2,1);
+            position: relative;
+        }
+        .checkmark {
+            width: 64px;
+            height: 64px;
+            display: block;
+            margin: 0 auto 18px auto;
+        }
+        .checkmark__circle {
+            stroke: #5eead4;
+            stroke-width: 3;
+            fill: none;
+            animation: checkmarkCircle 0.5s ease;
+        }
+        .checkmark__check {
+            stroke: #088178;
+            stroke-width: 3;
+            fill: none;
+            stroke-dasharray: 24;
+            stroke-dashoffset: 24;
+            animation: checkmarkCheck 0.5s 0.3s forwards;
+        }
+        @keyframes checkmarkCircle {
+            from { stroke-dasharray: 0 150; }
+            to { stroke-dasharray: 150 0; }
+        }
+        @keyframes checkmarkCheck {
+            to { stroke-dashoffset: 0; }
+        }
+        @media (max-width: 900px) {
+            .contact-container {
+                padding: 10vw 2vw;
+                max-width: 98vw;
+            }
+        }
+        @media (max-width: 700px) {
+            .contact-container {
+                padding: 16px 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="header">
+        <a href="index.html"><img src="logo1-removebg-preview.png" class="logo" alt="logo" width="150px" height="80px"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a class="active" href="contact.html">Contact</a></li>
+                <li><a href="paymentSection.html">Pay</a></li>
+                <li><a href="wishlist.html"><i class="fa fa-heart"></i> Wishlist</a></li>
+                <li><a href="cart.html" id="cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button id="login" onclick="window.location.href='login/Login UI.html'"></button>
+            <button id="hamburger-menu" aria-label="Open navigation" style="display:none; background:none; border:none; font-size:2em; cursor:pointer;">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+    </section>
+    <div class="contact-container">
+        <h2>Contact Us</h2>
+        <form class="contact-form" id="contactForm" autocomplete="off">
+            <div class="form-group">
+                <input type="text" id="name" name="name" required placeholder=" ">
+                <label for="name">Name</label>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" required placeholder=" ">
+                <label for="email">Email</label>
+            </div>
+            <div class="form-group">
+                <select id="type" name="type" required>
+                    <option value="" disabled selected hidden></option>
+                    <option value="Order">Order</option>
+                    <option value="Like">Like</option>
+                    <option value="Feedback">Feedback</option>
+                </select>
+                <label for="type">Type</label>
+            </div>
+            <div class="form-group">
+                <input type="text" id="subject" name="subject" required placeholder=" ">
+                <label for="subject">Subject</label>
+            </div>
+            <div class="form-group">
+                <textarea id="message" name="message" required placeholder=" "></textarea>
+                <label for="message">Message</label>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+        <div id="contactSuccess" class="contact-success" style="display:none;">
+            <svg class="checkmark" viewBox="0 0 52 52">
+                <circle class="checkmark__circle" cx="26" cy="26" r="24"/>
+                <path class="checkmark__check" fill="none" d="M14 27l7 7 16-16"/>
+            </svg>
+            Thank you for contacting us! We have received your message.
+        </div>
+        <div class="contact-info">
+            <p><i class="fa fa-envelope"></i> support@ecom.com</p>
+            <p><i class="fa fa-phone"></i> +1 234 567 8901</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:18px;">
+            <a href="index.html" style="color:#667eea;text-decoration:underline;font-weight:600;">&larr; Back to Home</a>
+        </div>
+    </div>
+    <script>
+    // Show thank you message on submit (placeholder for backend email logic)
+    document.getElementById('contactForm').onsubmit = function(e) {
+        e.preventDefault();
+        document.getElementById('contactForm').style.display = 'none';
+        document.getElementById('contactSuccess').style.display = 'block';
+        // Here you would send the form data to your backend for email delivery
+    };
+    </script>
+</body>
+</html> 
